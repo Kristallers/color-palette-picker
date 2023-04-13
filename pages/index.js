@@ -1,8 +1,13 @@
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import DisplayPalette from "@/components/DisplayPalette";
+import InputForm from "@/components/InputForm";
 
 export default function Home() {
-	return <></>;
+	return (
+		<>
+			<InputForm />
+			<DisplayPalette />
+		</>
+	);
 }
