@@ -9,7 +9,12 @@ const InputForm = () => {
 	};
 	return (
 		<>
-			<ChromePicker disableAlpha={true} color={color} onChange={handleColor} />
+			<ChromePicker
+				disableAlpha={true}
+				color={color}
+				onChange={handleColor}
+				onChangeComplete={handleColor}
+			/>
 		</>
 	);
 };
