@@ -1,6 +1,6 @@
 import classes from "../styles/DisplayPalette.module.css";
 
-const DisplayPalette = ({ color, schemeData }) => {
+const DisplayPalette = ({ schemeData }) => {
 	return (
 		<>
 			<h2 className={classes["palette-title"]}>Heres your color scheme!</h2>

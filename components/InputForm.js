@@ -1,7 +1,12 @@
 import { ChromePicker } from "react-color";
 import classes from "../styles/InputForm.module.css";
 
-const InputForm = ({ handleColor, handleCurrentColor, currentColor }) => {
+const InputForm = ({
+	handleFinalColor,
+	handleCurrentColor,
+	currentColor,
+	showPalette,
+}) => {
 	return (
 		<>
 			<div className={classes["picker-container"]}>
@@ -9,8 +14,9 @@ const InputForm = ({ handleColor, handleCurrentColor, currentColor }) => {
 					disableAlpha={true}
 					color={currentColor}
 					onChange={handleCurrentColor}
-					onChangeComplete={handleColor}
+					onChangeComplete={handleFinalColor}
 				/>
+				<button onClick={showPalette}>Generate scheme</button>
 			</div>
 		</>
 	);
