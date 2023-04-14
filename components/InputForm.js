@@ -1,14 +1,17 @@
 import { ChromePicker } from "react-color";
+import classes from "../styles/InputForm.module.css";
 
 const InputForm = ({ handleColor, handleCurrentColor, currentColor }) => {
 	return (
 		<>
-			<ChromePicker
-				disableAlpha={true}
-				color={currentColor}
-				onChange={handleCurrentColor}
-				onChangeComplete={handleColor}
-			/>
+			<div className={classes["picker-container"]}>
+				<ChromePicker
+					disableAlpha={true}
+					color={currentColor}
+					onChange={handleCurrentColor}
+					onChangeComplete={handleColor}
+				/>
+			</div>
 		</>
 	);
 };
