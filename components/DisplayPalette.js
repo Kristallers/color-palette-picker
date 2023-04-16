@@ -1,6 +1,8 @@
 import classes from "../styles/DisplayPalette.module.css";
 
 const DisplayPalette = ({ schemeData, wordArray }) => {
+	console.log(wordArray);
+
 	return (
 		<>
 			<h2 className={classes["palette-title"]}>Heres your color scheme!</h2>

@@ -10,7 +10,7 @@ export default function Home() {
 	const [schemeState, setSchemeState] = useState("inactive");
 	const [schemeData, setSchemeData] = useState([]);
 
-	const wordArray = [];
+	const [wordArray, setWordArray] = useState();
 
 	const handleFinalColor = (event) => {
 		const hexColor = event.hex;
@@ -39,14 +39,14 @@ export default function Home() {
 		};
 
 		const fetchWordArray = async () => {
+			const arr = [];
 			for (let i = 0; i < 6; i++) {
 				const res = await fetch("https://random-word-api.herokuapp.com/word");
 				const word = await res.json();
-				wordArray.push(word[0]);
+				arr.push(word[0]);
 			}
+			setWordArray((...prev) => arr);
 		};
-
-		Promise.all(wordArray).then(console.log(wordArray));
 
 		try {
 			fetchScheme(finalColor);
