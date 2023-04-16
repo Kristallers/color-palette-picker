@@ -1,19 +1,22 @@
 import classes from "../styles/DisplayPalette.module.css";
 
-const DisplayPalette = ({ schemeData }) => {
+const DisplayPalette = ({ schemeData, wordArray }) => {
 	return (
 		<>
 			<h2 className={classes["palette-title"]}>Heres your color scheme!</h2>
 			<ul className={classes["li-items__container"]}>
-				{schemeData.colors?.map((i) => {
+				{schemeData.colors?.map((item, index) => {
 					return (
 						<>
-							<li className={`color ${classes["li-item"]}`}>
-								Stink {JSON.stringify(i.hex.value)}{" "}
+							<li
+								key={JSON.stringify(item.hex.value)}
+								className={`color ${classes["li-item"]}`}
+							>
+								{wordArray[index]} {JSON.stringify(item.hex.value)}
 							</li>
 							<style jsx>{`
 								.color {
-									background-color: ${i.hex.value};
+									background-color: ${item.hex.value};
 								}
 							`}</style>
 						</>
